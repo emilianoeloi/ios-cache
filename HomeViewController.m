@@ -11,23 +11,65 @@
 #import "API.h"
 #import "UserCell.h"
 
+@interface HomeViewController()
+
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
+
+@end
+
 @implementation HomeViewController
 
 -(void)viewDidLoad{
+    [self startRefreshControl];
+    [SVProgressHUD show];
     [self loadUsers];
 }
 
 -(void)loadUsers{
-    [SVProgressHUD show];
     [[API sharedAPI]fetchUsers:^(NSArray *users, NSError *error) {
         _userList = users;
-        [_userTable reloadData];
-        [SVProgressHUD dismiss];
+        [self reloadData];
     }];
 }
 
--(NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index{
-    return 1;
+-(void)startRefreshControl{
+    _refreshControl = [[UIRefreshControl alloc]init];
+    [_refreshControl addTarget:self action:@selector(handleRefresh) forControlEvents:UIControlEventValueChanged];
+    [_userTable addSubview:_refreshControl];
+}
+
+-(void)handleRefresh{
+    [self loadUsers];
+}
+
+- (void)reloadData
+{
+    [_userTable reloadData];
+    
+    if (self.refreshControl) {
+        [self.refreshControl endRefreshing];
+    }
+    [SVProgressHUD dismiss];
+}
+
+-(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
+    if (_userList && [_userList count]>0) {
+        _userTable.backgroundView = nil;
+        _userTable.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        return [_userList count];
+    }else{
+        UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+        messageLabel.textColor = [UIColor blackColor];
+        messageLabel.numberOfLines = 0;
+        messageLabel.textAlignment = NSTextAlignmentCenter;
+        messageLabel.font = [UIFont fontWithName:@"Helvetica-Italic" size:20];
+        [messageLabel sizeToFit];
+        messageLabel.text = @"Sem usuários para exibir.\n Puxe para Atualizar.";
+        
+        _userTable.backgroundView = messageLabel;
+        _userTable.separatorStyle = UITableViewCellSelectionStyleNone;
+    }
+    return 0;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
