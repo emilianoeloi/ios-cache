@@ -22,7 +22,6 @@
     
     NSURL *avatarUrl = [NSURL URLWithString:_user.avatarUrl];
     [_avatar setImageWithURL:avatarUrl];
-    [_avatar c
     
     [self loadUser];
 }

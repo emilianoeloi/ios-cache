@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		1240CB0A75041CD05E58C5BB /* libPods-cachezeroumTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C0BDBB7F430297ED4A89CC /* libPods-cachezeroumTests.a */; };
 		126F980ED9FD33414763665C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5928F2EA4CF5A182DBD680E2 /* libPods.a */; };
+		CA2DA8DE1A95450F00E4B576 /* CacheHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2DA8DD1A95450F00E4B576 /* CacheHelper.m */; };
+		CA2DA8E11A95636A00E4B576 /* HTTPRequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2DA8E01A95636A00E4B576 /* HTTPRequestHelper.m */; };
 		CA4717701A94E5D80047D3D5 /* GithubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA47176F1A94E5D80047D3D5 /* GithubViewController.m */; };
+		CA4717741A9538320047D3D5 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CA4717721A9538320047D3D5 /* Model.xcdatamodeld */; };
 		CA6279401A93B7FB00494E33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CA62793F1A93B7FB00494E33 /* main.m */; };
 		CA6279431A93B7FB00494E33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6279421A93B7FB00494E33 /* AppDelegate.m */; };
 		CA6279491A93B7FB00494E33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA6279471A93B7FB00494E33 /* Main.storyboard */; };
@@ -38,8 +41,13 @@
 		78E6C4F39C64CBDAEEE77F4B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7C9019418904CA49E8D7A729 /* Pods-cachezeroumTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cachezeroumTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cachezeroumTests/Pods-cachezeroumTests.debug.xcconfig"; sourceTree = "<group>"; };
 		99C0BDBB7F430297ED4A89CC /* libPods-cachezeroumTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cachezeroumTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA2DA8DC1A95450F00E4B576 /* CacheHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheHelper.h; sourceTree = "<group>"; };
+		CA2DA8DD1A95450F00E4B576 /* CacheHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheHelper.m; sourceTree = "<group>"; };
+		CA2DA8DF1A95636A00E4B576 /* HTTPRequestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPRequestHelper.h; sourceTree = "<group>"; };
+		CA2DA8E01A95636A00E4B576 /* HTTPRequestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPRequestHelper.m; sourceTree = "<group>"; };
 		CA47176E1A94E5D80047D3D5 /* GithubViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GithubViewController.h; sourceTree = "<group>"; };
 		CA47176F1A94E5D80047D3D5 /* GithubViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GithubViewController.m; sourceTree = "<group>"; };
+		CA4717731A9538320047D3D5 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		CA62793A1A93B7FB00494E33 /* cachezeroum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cachezeroum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA62793E1A93B7FB00494E33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA62793F1A93B7FB00494E33 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -140,6 +148,17 @@
 			name = UI;
 			sourceTree = "<group>";
 		};
+		CA4717751A953B4D0047D3D5 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				CA2DA8DC1A95450F00E4B576 /* CacheHelper.h */,
+				CA2DA8DD1A95450F00E4B576 /* CacheHelper.m */,
+				CA2DA8DF1A95636A00E4B576 /* HTTPRequestHelper.h */,
+				CA2DA8E01A95636A00E4B576 /* HTTPRequestHelper.m */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
 		CA6279311A93B7FB00494E33 = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +182,7 @@
 		CA62793C1A93B7FB00494E33 /* cachezeroum */ = {
 			isa = PBXGroup;
 			children = (
+				CA4717751A953B4D0047D3D5 /* Helper */,
 				CA4717711A950BD60047D3D5 /* UI */,
 				CA47176D1A94E5B80047D3D5 /* Github */,
 				CA47176B1A94E57E0047D3D5 /* Home */,
@@ -207,6 +227,7 @@
 		CA62796A1A93BE1300494E33 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				CA4717721A9538320047D3D5 /* Model.xcdatamodeld */,
 				CA62796B1A93C08100494E33 /* API.h */,
 				CA62796C1A93C08100494E33 /* API.m */,
 				CA62796F1A93C13C00494E33 /* Constants.h */,
@@ -391,11 +412,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA2DA8DE1A95450F00E4B576 /* CacheHelper.m in Sources */,
 				CA6279721A93C2F800494E33 /* User.m in Sources */,
 				CA6279431A93B7FB00494E33 /* AppDelegate.m in Sources */,
 				CA6279401A93B7FB00494E33 /* main.m in Sources */,
 				CA4717701A94E5D80047D3D5 /* GithubViewController.m in Sources */,
 				CA6279751A93CFF800494E33 /* UserViewController.m in Sources */,
+				CA2DA8E11A95636A00E4B576 /* HTTPRequestHelper.m in Sources */,
+				CA4717741A9538320047D3D5 /* Model.xcdatamodeld in Sources */,
 				CA62796D1A93C08100494E33 /* API.m in Sources */,
 				CA6279791A93D17200494E33 /* UserCell.m in Sources */,
 				CA6279691A93BC3000494E33 /* HomeViewController.m in Sources */,
@@ -603,6 +627,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CA4717721A9538320047D3D5 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CA4717731A9538320047D3D5 /* Model.xcdatamodel */,
+			);
+			currentVersion = CA4717731A9538320047D3D5 /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = ../Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CA6279321A93B7FB00494E33 /* Project object */;
 }

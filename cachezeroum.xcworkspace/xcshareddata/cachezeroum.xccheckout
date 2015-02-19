@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E041B4DF-5D8C-43C9-8A98-00D706F8D760</string>
+	<key>IDESourceControlProjectName</key>
+	<string>cachezeroum</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>FA0EBB965E519CABEE111D3B2D15C9EF8912CA22</key>
+		<string>https://github.com/emilianoeloi/ios-cache.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>cachezeroum.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>FA0EBB965E519CABEE111D3B2D15C9EF8912CA22</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/emilianoeloi/ios-cache.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>FA0EBB965E519CABEE111D3B2D15C9EF8912CA22</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FA0EBB965E519CABEE111D3B2D15C9EF8912CA22</string>
+			<key>IDESourceControlWCCName</key>
+			<string>cachezeroum</string>
+		</dict>
+	</array>
+</dict>
+</plist>

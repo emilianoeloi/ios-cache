@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Emiliano Eloi. All rights reserved.
 //
 
-#import <AFNetworking/AFHTTPRequestOperationManager.h>
+#import "HTTPRequestHelper.h"
 #import "API.h"
 
 @implementation API
@@ -25,34 +25,44 @@
 
 -(void)fetchUsers:(UsersBlock)completion{
     
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:kAPIGithubUsers parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [[HTTPRequestHelper sharedHelper]getWithUrl:kAPIGithubUsers andCompletion:^(id result, NSError *error) {
+        if (error) {
+            completion(nil,error);
+            return;
+        }
         NSMutableArray *users = [[NSMutableArray alloc]init];
         NSError *iterationError = nil;
-        for (NSDictionary *dict in responseObject) {
+        for (NSDictionary *dict in result) {
             iterationError = nil;
             User *user = [[User alloc] initWithDictionary:dict error:&iterationError];
+            if (iterationError) {
+                completion(nil, iterationError);
+                break;return;
+            }
             if (user) {
                 [users addObject:user];
             }
         }
+        
         completion(users,nil);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error.description);
-        completion(nil,error);
+        
     }];
-    
 }
 
 -(void)fetchUser:(User *)user andCompletion:(UserBlock)completion{
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:[NSString stringWithFormat:kAPIGithubUser, user.login ] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    
+    [[HTTPRequestHelper sharedHelper]getWithUrl:[NSString stringWithFormat:kAPIGithubUser, user.login ] andCompletion:^(id result, NSError *error) {
+        if (error) {
+            completion(nil,error);
+            return;
+        }
         NSError *iterationError = nil;
-        User *user = [[User alloc] initWithDictionary:responseObject error:&iterationError];
+        User *user = [[User alloc] initWithDictionary:result error:&iterationError];
+        if (iterationError) {
+            completion(nil, iterationError);
+            return;
+        }
         completion(user,nil);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error.description);
-        completion(nil,error);
     }];
 }
 

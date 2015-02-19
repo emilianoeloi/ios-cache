@@ -56,7 +56,7 @@
     if (_userList && [_userList count]>0) {
         _userTable.backgroundView = nil;
         _userTable.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-        return [_userList count];
+        return 1;
     }else{
         UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
         messageLabel.textColor = [UIColor blackColor];
