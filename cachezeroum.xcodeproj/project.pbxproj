@@ -11,6 +11,7 @@
 		126F980ED9FD33414763665C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5928F2EA4CF5A182DBD680E2 /* libPods.a */; };
 		CA2DA8DE1A95450F00E4B576 /* CacheHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2DA8DD1A95450F00E4B576 /* CacheHelper.m */; };
 		CA2DA8E11A95636A00E4B576 /* HTTPRequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2DA8E01A95636A00E4B576 /* HTTPRequestHelper.m */; };
+		CA2DA8E41A9568C300E4B576 /* Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2DA8E31A9568C300E4B576 /* Cache.m */; };
 		CA4717701A94E5D80047D3D5 /* GithubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA47176F1A94E5D80047D3D5 /* GithubViewController.m */; };
 		CA4717741A9538320047D3D5 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CA4717721A9538320047D3D5 /* Model.xcdatamodeld */; };
 		CA6279401A93B7FB00494E33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CA62793F1A93B7FB00494E33 /* main.m */; };
@@ -45,6 +46,8 @@
 		CA2DA8DD1A95450F00E4B576 /* CacheHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheHelper.m; sourceTree = "<group>"; };
 		CA2DA8DF1A95636A00E4B576 /* HTTPRequestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPRequestHelper.h; sourceTree = "<group>"; };
 		CA2DA8E01A95636A00E4B576 /* HTTPRequestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPRequestHelper.m; sourceTree = "<group>"; };
+		CA2DA8E21A9568C300E4B576 /* Cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cache.h; sourceTree = "<group>"; };
+		CA2DA8E31A9568C300E4B576 /* Cache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cache.m; sourceTree = "<group>"; };
 		CA47176E1A94E5D80047D3D5 /* GithubViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GithubViewController.h; sourceTree = "<group>"; };
 		CA47176F1A94E5D80047D3D5 /* GithubViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GithubViewController.m; sourceTree = "<group>"; };
 		CA4717731A9538320047D3D5 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -233,6 +236,8 @@
 				CA62796F1A93C13C00494E33 /* Constants.h */,
 				CA6279701A93C2F800494E33 /* User.h */,
 				CA6279711A93C2F800494E33 /* User.m */,
+				CA2DA8E21A9568C300E4B576 /* Cache.h */,
+				CA2DA8E31A9568C300E4B576 /* Cache.m */,
 			);
 			name = Business;
 			sourceTree = "<group>";
@@ -418,6 +423,7 @@
 				CA6279401A93B7FB00494E33 /* main.m in Sources */,
 				CA4717701A94E5D80047D3D5 /* GithubViewController.m in Sources */,
 				CA6279751A93CFF800494E33 /* UserViewController.m in Sources */,
+				CA2DA8E41A9568C300E4B576 /* Cache.m in Sources */,
 				CA2DA8E11A95636A00E4B576 /* HTTPRequestHelper.m in Sources */,
 				CA4717741A9538320047D3D5 /* Model.xcdatamodeld in Sources */,
 				CA62796D1A93C08100494E33 /* API.m in Sources */,

@@ -8,6 +8,7 @@
 
 #import "CacheHelper.h"
 #import <CommonCrypto/CommonCrypto.h>
+#import "NSString+MD5.h"
 
 @interface CacheHelper()
 
@@ -17,7 +18,7 @@
 
 @implementation CacheHelper
 
-+ (instancetype)sharedCache
++ (instancetype)sharedHelper
 {
     static CacheHelper* _sharedCache;
     
@@ -30,31 +31,22 @@
     return _sharedCache;
 }
 
--(NSString *)hashWithText:(NSString *)text{
-    const char *cStr = [text UTF8String];
-    unsigned char digest[16];
-    
-    CC_MD5( cStr, strlen(cStr), digest );
-    
-    NSMutableString *resultString = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
-    
-    for(int i = 0; i < CC_MD5_DIGEST_LENGTH; i++){
-        [resultString appendFormat:@"%02x", digest[i]];
-    }
-    return  resultString;
-}
-
 -(void)setCacheWithCacheKey:(NSString *) cacheKey andCacheValue:(id)cacheValue{
-    NSLog(@"Salvando no Cache: %@", cacheKey);
-    NSString *hashKey = [self hashWithText:cacheKey];
+    NSString *hashKey = [cacheKey MD5Digest];
+#ifdef DEBUG
+    NSLog(@"Salvando no Cache: %@ | %@", cacheKey, hashKey);
+#endif
     [_cacheData setObject:cacheValue forKey:hashKey];
 }
 -(id)getCacheWithCacheKey:(NSString *) cacheKey{
-    NSString *hashKey = [self hashWithText:cacheKey];
+    NSString *hashKey = [cacheKey MD5Digest];
+#ifdef DEBUG
+    NSLog(@"Obtendo do Cache: %@ | %@", cacheKey, hashKey);
+#endif
     return [_cacheData valueForKey:hashKey];
 }
 -(BOOL)hasCacheWithCacheKey:(NSString *) cacheKey{
-    NSString *hashKey = [self hashWithText:cacheKey];
+    NSString *hashKey = [cacheKey MD5Digest];
     return [[_cacheData valueForKey:hashKey] count]?YES:NO;
 }
 

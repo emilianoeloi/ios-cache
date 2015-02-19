@@ -10,7 +10,7 @@
 
 @interface CacheHelper : NSObject
 
-+ (instancetype)sharedCache;
++ (instancetype)sharedHelper;
 
 -(void)setCacheWithCacheKey:(NSString *) cacheKey andCacheValue:(id)cacheValue;
 -(id)getCacheWithCacheKey:(NSString *) cacheKey;
