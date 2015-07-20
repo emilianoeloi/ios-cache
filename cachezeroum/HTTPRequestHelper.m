@@ -29,13 +29,13 @@
 }
 
 -(void)saveInCache{
-    [[CacheHelper sharedHelper]setCacheWithCacheKey:_cache.key andCacheValue:_cache.jsonResult];
+    [[CacheHelper sharedHelper]saveCacheWithCacheKey:_cache.key andCacheValue:_cache.jsonResult];
 }
 
 -(void)getWithUrl:(NSString *)url andCompletion:(HttpRequestHelperGetBlock)completion{
     
     if ([[CacheHelper sharedHelper]hasCacheWithCacheKey:url]) {
-        completion([[CacheHelper sharedHelper]getCacheWithCacheKey:url], nil);
+        completion([[CacheHelper sharedHelper]cacheWithCacheKey:url], nil);
         return;
     }
     

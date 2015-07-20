@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "AppDelegate.h"
+
+#define CACHE_KEY @"GENERAL_CACHE"
+#define CONFIG_ENTITY_NAME @"Config"
+#define CONFIG_ENTITY_ATTR_KEY @"key"
+#define CONFIG_ENTITY_ATTR_VALUE @"value"
 
 @interface cachezeroumTests : XCTestCase
 
@@ -25,16 +31,39 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+- (void)testACacheSave {
+    
+    NSMutableDictionary *arr = [[NSMutableDictionary alloc]init];
+    [arr addEntriesFromDictionary:[[NSMutableDictionary alloc]init]];
+    
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    NSManagedObject *newCache = [NSEntityDescription insertNewObjectForEntityForName:CONFIG_ENTITY_NAME inManagedObjectContext:context];
+    [newCache setValue:CACHE_KEY forKey:CONFIG_ENTITY_ATTR_KEY];
+    [newCache setValue:arr forKey:CONFIG_ENTITY_ATTR_VALUE];
+    NSError *error;
+    [context save:&error];
+    
+    XCTAssertNil(error, @"Não é Nulo");
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+- (void)testBCacheRetrieve {
+    
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    NSEntityDescription *cacheDescription = [NSEntityDescription entityForName:CONFIG_ENTITY_NAME inManagedObjectContext:context];
+    NSFetchRequest *request =  [[NSFetchRequest alloc]init];
+    [request setEntity:cacheDescription];
+    NSString *formatToFormat = [NSString stringWithFormat:@"(%@=%@)",CONFIG_ENTITY_ATTR_KEY,@"%@"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:formatToFormat, CACHE_KEY];
+    [request setPredicate:predicate];
+    NSError *error;
+    NSArray *caches = [context executeFetchRequest:request error:&error];
+    
+    NSManagedObject *firstCache = caches[0];
+    NSMutableArray *cacheData = [firstCache valueForKey:CONFIG_ENTITY_ATTR_VALUE];
+    
+    XCTAssertNil(error, @"Não é Nulo");
+    XCTAssertNotNil(cacheData, "Não tem valor nenhum");
 }
-
 @end

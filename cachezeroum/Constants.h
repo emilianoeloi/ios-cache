@@ -12,8 +12,9 @@
 typedef void (^UsersBlock)(NSArray *users, NSError *error);
 typedef void (^UserBlock)(User *user, NSError *error);
 typedef void (^HttpRequestHelperGetBlock)(id result, NSError *error);
+typedef void (^FetchConfigWithKeyBlock)(id result, NSError *error);
 
-static NSString* const kAPIGithubUsers = @"https://api.github.com/users";
+static NSString* const kAPIGithubUsers = @"https://api.github.com/orgs/globocom/members";
 static NSString* const kAPIGithubUser = @"https://api.github.com/users/%@";
 
 

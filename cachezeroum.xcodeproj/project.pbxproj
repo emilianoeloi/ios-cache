@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1240CB0A75041CD05E58C5BB /* libPods-cachezeroumTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C0BDBB7F430297ED4A89CC /* libPods-cachezeroumTests.a */; };
 		126F980ED9FD33414763665C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5928F2EA4CF5A182DBD680E2 /* libPods.a */; };
+		AC4761B41B5D948D00525C99 /* ConfigHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4761B31B5D948D00525C99 /* ConfigHelper.m */; };
 		CA2DA8DE1A95450F00E4B576 /* CacheHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2DA8DD1A95450F00E4B576 /* CacheHelper.m */; };
 		CA2DA8E11A95636A00E4B576 /* HTTPRequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2DA8E01A95636A00E4B576 /* HTTPRequestHelper.m */; };
 		CA2DA8E41A9568C300E4B576 /* Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2DA8E31A9568C300E4B576 /* Cache.m */; };
@@ -42,6 +43,8 @@
 		78E6C4F39C64CBDAEEE77F4B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7C9019418904CA49E8D7A729 /* Pods-cachezeroumTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cachezeroumTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cachezeroumTests/Pods-cachezeroumTests.debug.xcconfig"; sourceTree = "<group>"; };
 		99C0BDBB7F430297ED4A89CC /* libPods-cachezeroumTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cachezeroumTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC4761B21B5D948D00525C99 /* ConfigHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigHelper.h; sourceTree = "<group>"; };
+		AC4761B31B5D948D00525C99 /* ConfigHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigHelper.m; sourceTree = "<group>"; };
 		CA2DA8DC1A95450F00E4B576 /* CacheHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheHelper.h; sourceTree = "<group>"; };
 		CA2DA8DD1A95450F00E4B576 /* CacheHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheHelper.m; sourceTree = "<group>"; };
 		CA2DA8DF1A95636A00E4B576 /* HTTPRequestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPRequestHelper.h; sourceTree = "<group>"; };
@@ -158,6 +161,8 @@
 				CA2DA8DD1A95450F00E4B576 /* CacheHelper.m */,
 				CA2DA8DF1A95636A00E4B576 /* HTTPRequestHelper.h */,
 				CA2DA8E01A95636A00E4B576 /* HTTPRequestHelper.m */,
+				AC4761B21B5D948D00525C99 /* ConfigHelper.h */,
+				AC4761B31B5D948D00525C99 /* ConfigHelper.m */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -418,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA2DA8DE1A95450F00E4B576 /* CacheHelper.m in Sources */,
+				AC4761B41B5D948D00525C99 /* ConfigHelper.m in Sources */,
 				CA6279721A93C2F800494E33 /* User.m in Sources */,
 				CA6279431A93B7FB00494E33 /* AppDelegate.m in Sources */,
 				CA6279401A93B7FB00494E33 /* main.m in Sources */,
@@ -496,7 +502,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -532,7 +538,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -548,6 +554,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = "cachezeroum/Cache-Prefix.pch";
 				INFOPLIST_FILE = cachezeroum/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -561,6 +568,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = "cachezeroum/Cache-Prefix.pch";
 				INFOPLIST_FILE = cachezeroum/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

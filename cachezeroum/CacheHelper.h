@@ -12,8 +12,9 @@
 
 + (instancetype)sharedHelper;
 
--(void)setCacheWithCacheKey:(NSString *) cacheKey andCacheValue:(id)cacheValue;
--(id)getCacheWithCacheKey:(NSString *) cacheKey;
+-(void)saveCacheWithCacheKey:(NSString *) cacheKey andCacheValue:(id)cacheValue;
+-(id)cacheWithCacheKey:(NSString *) cacheKey;
 -(BOOL) hasCacheWithCacheKey:(NSString *) cacheKey;
-
+-(void)loadDiskCache;
+-(void)saveCacheInDisk;
 @end
