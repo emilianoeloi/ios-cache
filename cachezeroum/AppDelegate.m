@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 #import "CacheHelper.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+
 
 @interface AppDelegate ()
 
@@ -18,6 +21,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[CacheHelper sharedHelper] loadDiskCache];
+    
+    [Fabric with:@[[Crashlytics class]]];
+
     return YES;
 }
 
