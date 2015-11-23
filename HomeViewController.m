@@ -10,6 +10,7 @@
 #import "UserViewController.h"
 #import "API.h"
 #import "UserCell.h"
+#import <Crashlytics/Answers.h>
 
 @interface HomeViewController()
 
@@ -87,6 +88,11 @@
     UserViewController *dest = [segue destinationViewController];
     UserCell *cell = (UserCell *)sender;
     dest.user = cell.user;
+    
+    [Answers logContentViewWithName:@"Github users"
+                        contentType:@"Github user"
+                          contentId:cell.user
+                   customAttributes:@{}];
 }
 
 @end

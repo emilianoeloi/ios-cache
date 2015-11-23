@@ -66,4 +66,30 @@
     }];
 }
 
+-(void)fetchEvent:(Org *)org andCompletion:(EventsBlock)completion{
+    
+    [[HTTPRequestHelper sharedHelper]getWithUrl:[NSString stringWithFormat:kAPIGithubOrgEvents,org.login] andCompletion:^(id result, NSError *error) {
+        if (error) {
+            completion(nil,error);
+            return;
+        }
+        NSMutableArray *events = [[NSMutableArray alloc]init];
+        NSError *iterationError = nil;
+        for (NSDictionary *dict in result) {
+            iterationError = nil;
+            Event *event = [[Event alloc] initWithDictionary:dict error:&iterationError];
+            if (iterationError) {
+                completion(nil, iterationError);
+                break;return;
+            }
+            if (event) {
+                [events addObject:event];
+            }
+        }
+        
+        completion(events,nil);
+        
+    }];
+}
+
 @end

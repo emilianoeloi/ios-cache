@@ -10,7 +10,8 @@
 #import "CacheHelper.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
-
+#import "Event.h"
+#import "API.h"
 
 @interface AppDelegate ()
 
@@ -23,6 +24,12 @@
     [[CacheHelper sharedHelper] loadDiskCache];
     
     [Fabric with:@[[Crashlytics class]]];
+    
+    Org *org = [[Org alloc]init];
+    [org setLogin:@"globocom"];
+    [[API sharedAPI] fetchEvent:org andCompletion:^(NSArray *events, NSError *error) {
+        NSLog(@"\n\n\Events: %d\n\n\n", [events count]);
+    }];
 
     return YES;
 }

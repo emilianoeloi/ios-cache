@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *publicGists;
 @property (weak, nonatomic) IBOutlet UILabel *followers;
 @property (weak, nonatomic) IBOutlet UILabel *following;
+@property (weak, nonatomic) IBOutlet UILabel *status;
 
 
 @property (nonatomic, strong) User *user;

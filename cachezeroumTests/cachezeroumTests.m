@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 #import "AppDelegate.h"
+#import "Event.h"
+#import "API.h"
 
 #define CACHE_KEY @"GENERAL_CACHE"
 #define CONFIG_ENTITY_NAME @"Config"
@@ -65,5 +67,17 @@
     
     XCTAssertNil(error, @"Não é Nulo");
     XCTAssertNotNil(cacheData, "Não tem valor nenhum");
+}
+
+-(void)testFetchEvents{
+    
+    Org *org = [[Org alloc]init];
+    [org setLogin:@"globocom"];
+    
+    [[API sharedAPI] fetchEvent:org andCompletion:^(NSArray *events, NSError *error) {
+        NSLog(@"testFetchEvents %.02f", [events count]);
+        XCTAssertNotNil(events,@"Sem Eventos");
+    }];
+    
 }
 @end

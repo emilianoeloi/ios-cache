@@ -29,13 +29,20 @@
 -(void)loadUser{
     [SVProgressHUD show];
     [[API sharedAPI]fetchUser:_user andCompletion:^(User *user, NSError *error) {
-        _user = user;
-        _userName.text = _user.name;
-        _userLogin.text = _user.login;
-        _publicRepos.text = [_user.publicRepos stringValue];
-        _publicGists.text = [_user.publicGists stringValue];
-        _followers.text = [_user.followers stringValue];
-        _following.text = [_user.following stringValue];
+        
+        if (error) {
+            [_status setText:error.description];
+            [_status setHidden:NO];
+        }else{
+            [_status setHidden:YES];
+            _user = user;
+            _userName.text = _user.name;
+            _userLogin.text = _user.login;
+            _publicRepos.text = [_user.publicRepos stringValue];
+            _publicGists.text = [_user.publicGists stringValue];
+            _followers.text = [_user.followers stringValue];
+            _following.text = [_user.following stringValue];
+        }
         [SVProgressHUD dismiss];
     }];
 }

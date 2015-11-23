@@ -4,14 +4,34 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>cacheZeroUmOpen.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
+		<key>cacheZeroUmShare.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
 		<key>cachezeroum.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>0</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>AC3C3F091C037DD9001AA531</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AC3C3F1D1C037EDB001AA531</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>CA6279391A93B7FB00494E33</key>
 		<dict>
 			<key>primary</key>

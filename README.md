@@ -21,8 +21,22 @@ iOS Cache
 
 Core Data Stack: NSManagedObjectModel, NSPersistentStoreCoordinator, NSManagedObjectContext
 
+3) App Extensions
+
+Requires: iOS 8, OS X Yosemite
+
+3.1) Action
+
+3.2) Share
+
+3.3) Today
+"Your apps can now display widgets in the Today view of Notification Center, providing quick updates or enabling brief tasks — for example, posting updates on package deliveries, the latest surf reports, or breaking news stories."
+
+
 ## References
 
 iOS Data Storage: Core Data vs. SQLite: http://www.drdobbs.com/mobile/ios-data-storage-core-data-vs-sqlite/240168843	
 
 An iOS 7 Core Data Tutorial: http://www.techotopia.com/index.php/An_iOS_7_Core_Data_Tutorial
+
+App Extensions: https://developer.apple.com/app-extensions/

@@ -16,6 +16,7 @@
     /// Domain
     #import "User.h"
     #import "Cache.h"
+    #import "Event.h"
 
     #import "Constants.h"
     #import "SVProgressHUD.h"

@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uny-oO-za7">
-                                <rect key="frame" x="250" y="72" width="100" height="150"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uny-oO-za7">
+                                <rect key="frame" x="250" y="131" width="100" height="91"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="CMg-Nh-zVh"/>
                                     <constraint firstAttribute="height" constant="150" id="m4O-x4-5Xy"/>
@@ -94,14 +94,22 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOt-gP-BKM">
+                                <rect key="frame" x="0.0" y="64" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="BSK-Sa-yum" firstAttribute="leading" secondItem="76H-ib-xXB" secondAttribute="trailing" constant="8" symbolic="YES" id="05T-Fz-Qbs"/>
                             <constraint firstItem="pz9-X8-3l8" firstAttribute="centerX" secondItem="kDY-Mq-MnU" secondAttribute="centerX" id="0f1-2W-Njn"/>
+                            <constraint firstItem="HOt-gP-BKM" firstAttribute="leading" secondItem="aMi-mQ-hDD" secondAttribute="leading" id="1ox-rS-cEQ"/>
                             <constraint firstItem="76H-ib-xXB" firstAttribute="leading" secondItem="iM2-lx-VhN" secondAttribute="leading" id="4tg-OD-4xa"/>
                             <constraint firstAttribute="centerX" secondItem="uny-oO-za7" secondAttribute="centerX" id="4uA-DM-Trw"/>
                             <constraint firstItem="geN-AB-crb" firstAttribute="trailing" secondItem="iMI-J4-nVd" secondAttribute="trailing" id="97j-Ue-qsK"/>
+                            <constraint firstItem="HOt-gP-BKM" firstAttribute="top" secondItem="HFL-bq-Wy6" secondAttribute="bottom" id="B56-Lv-6OV"/>
                             <constraint firstItem="pz9-X8-3l8" firstAttribute="centerX" secondItem="uny-oO-za7" secondAttribute="centerX" id="GkY-d7-wpr"/>
                             <constraint firstItem="efG-lk-M6c" firstAttribute="top" secondItem="pz9-X8-3l8" secondAttribute="bottom" id="MB4-GZ-oSY"/>
                             <constraint firstItem="b41-GA-85q" firstAttribute="top" secondItem="iM2-lx-VhN" secondAttribute="top" id="OR7-3l-QRp"/>
@@ -129,6 +137,7 @@
                         <outlet property="following" destination="9ho-iC-vEQ" id="nhf-1s-oF1"/>
                         <outlet property="publicGists" destination="BSK-Sa-yum" id="ZaN-M0-7gP"/>
                         <outlet property="publicRepos" destination="b41-GA-85q" id="EC0-vo-y8a"/>
+                        <outlet property="status" destination="HOt-gP-BKM" id="mgA-aa-Ri2"/>
                         <outlet property="userLogin" destination="efG-lk-M6c" id="Z6H-bx-Zuh"/>
                         <outlet property="userName" destination="pz9-X8-3l8" id="y0y-JC-B2s"/>
                     </connections>
